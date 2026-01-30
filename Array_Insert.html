@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Element Insert</title>
+</head>
+<script>
+    // let data = [2, 4, 5, 6, 8, 9]
+    // let position = 2;
+    // let newVal = 55;
+    // console.log(data)
+    // for (let i = data.length - 1; i >= 0; i--) {
+    //     if (i >= position) {
+    //         data[i + 1] = data[i];
+    //         if (i === position) {
+    //             data[i] = newVal
+    //         }
+    //     }
+    // }
+    // console.log(data)
+    function InsertValue() {
+        let data2 = [23, 4, 5, 6, 87, 9, 0]
+        let newVal2 = parseInt(document.getElementById('value').value)
+        let position2 = parseInt(document.getElementById('position').value)
+        console.log(data2)
+
+        for (let b = data2.length - 1; b >= 0; b--) {
+            if (typeof (newVal2) && typeof (position2) === "number") {
+                if (b >= position2) {
+                    data2[b + 1] = data2[b]
+                    if (b = position2) {
+                        data2[b] = newVal2
+                    }
+                }
+            } else {
+                alert("enter a valid values")
+            }
+        }
+        console.log(data2)
+    }
+
+    let data3 = [2, 3, 4, 5, 6, 6, 574, 46,]
+    // 0 = number of deleting index
+    data3.splice(2, 0, 20000)
+    console.log(data3)
+</script>
+
+<body>
+    <input type="text" id="value" placeholder="value">
+    <input type="text" id="position" placeholder="position">
+    <button onclick="InsertValue()">Insert</button>
+
+</body>
+
+</html>

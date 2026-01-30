@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Array Tracersing</title>
+    <script>
+        let data = [2, 55, 44, 25, 9, 9, 0, 2]
+        // for (let i = 0; i < data.length; i++) {
+        //     document.write(`Array ${i} is ${data[i]} <br>`)
+        // }
+        // let c = 2;
+        // document.write(data[c])
+        function getelement() {
+            let val = document.getElementById('input').value
+            if (val < data.length && typeof (parseInt(val)) === "number" && val >= 0) {
+                alert(data[val])
+            } else {
+                alert("plz enter a valid number")
+            }
+        } 
+    </script>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button onclick="getelement()">Get Element</button>
+
+</body>
+
+</html>
