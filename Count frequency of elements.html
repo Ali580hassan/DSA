@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <script>
+        let arr = [1, 2, 3, 2, 1, 2, 4];
+        let freq = {}
+        for (let i = 0; i < arr.length; i++) {
+            let arr2 = arr[i]
+            if (freq[arr2] === undefined) {
+                freq[arr2] = 1;
+            }
+            else {
+                freq[arr2] = freq[arr2] + 1;
+            }
+        }
+        console.log(freq);
+    </script>
+</head>
+
+
+<body>
+
+</body>
+
+</html>
