@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>stack with class</title>
+    <script>
+        class Stack {
+            data = []
+            arraySize;
+            max;
+            constructor(maxVal) {
+                this.arraySize = this.data.length
+                this.max = maxVal
+            }
+            push(newVal) {
+                if (this.arraySize >= this.max) {
+                    alert("stak is full")
+                } else {
+                    this.data[this.arraySize] = newVal
+                    this.arraySize++
+                }
+            }
+            pop() {
+                if (this.arraySize > 0) {
+                    this.arraySize--;
+                    this.data.length = this.arraySize;
+                } else {
+                    alert("stack is already empty")
+                }
+            }
+            display() {
+                console.log(this.data)
+            }
+        }
+        obj = new Stack(5)
+        obj.push(2)
+        obj.push(9)
+        obj.push(10)
+        obj.push(10)
+        obj.pop()
+        obj.display()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+Asymptotic notion 
+it is used to find the best suited and better algo that help to solve the problems
+
+n = total num of values in array
+f(n) = 5n^2 + 6n + 12  
+
+select bigger value like 500 (5(10)^2) = 500 ignore other values
+let think that way
+n^2 its mean nested loop 
+n  mean single loop 
+12 simple variable
+
+time complexcity dirctly depend on inputs(values of array)
+
+
+help javaTpoint  DS this is documentation
+
+
+noations 
+
+big O nutation (worst case) 
+Omaga nuation (avrage case)
+tita nutation (best case)

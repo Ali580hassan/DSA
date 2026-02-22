@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <script>
+        // FCLS (first come last serve )  
+        // push pop and peek (max value)
+
+        let data = []
+        let arraySize = data.length
+        let max = 5
+
+        function push(newVal) {
+            if (arraySize == max) {
+                console.log("stack is full can not add this value" + newVal)
+            }
+            data[arraySize] = newVal;
+            arraySize += 1
+        }
+
+        push(5)
+        push(5)
+        push(5)
+        push(5)
+        // push(5)
+        // push(5)
+        // push(5)
+        function pop() {
+            if (arraySize > 0) {
+                arraySize -= 1;
+                data.length = arraySize
+            } else {
+                console.log("stck is empty already")
+            }
+        }
+        pop()
+        console.log(data)
+
+        // primitive and non primmitive data type 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

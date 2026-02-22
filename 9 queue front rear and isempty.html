@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Queue</title>
+    <script>
+        // FIFO first come first serve
+        let Queue = []
+        let queSize = Queue.length
+        let max = 5
+        // function enQueue(newVal) {
+        //     if (queSize >= max) {
+        //         alert("queue is full")
+        //     } else {
+        //         Queue[queSize] = newVal;
+        //         queSize++
+        //     }
+        // }
+        function enQueue() {
+            let newVal = document.getElementById('queIn').value
+            if (queSize >= max) {
+                alert("queue is full")
+            } else {
+                Queue[queSize] = newVal;
+                queSize++
+            }
+        }
+        function deQueue() {
+            if (!isempty()) {
+                for (let i = 0; i < Queue.length; i++) {
+                    Queue[i] = Queue[i + 1]
+                }
+                queSize--
+                Queue.length = queSize
+            } else {
+                alert("queue is empty")
+            }
+
+        }
+        function front() {
+            if (!isempty()) {
+                console.log(Queue[0])
+            } else {
+                alert("queue is empty")
+            }
+        }
+        function rear() {
+            if (!isempty()) {
+                console.log(Queue[queSize - 1])
+            } else {
+                alert("queue is empty")
+            }
+        }
+        function isempty() {
+            if (queSize <= 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+        function display() {
+            console.log(Queue)
+        }
+        enQueue(5)
+        enQueue(55)
+        enQueue(23)
+        deQueue()
+        display()
+    </script>
+</head>
+
+<body>
+    <h1>Queue with input element</h1>
+    <input type="text" placeholder="enter number" id="queIn">
+    <button onclick="enQueue()">ADD element</button>
+    <br><br>
+    <button onclick="deQueue()">remove element</button>
+    <button onclick="display()">Display</button>
+    <button onclick="front()">get front element</button>
+    <button onclick="rear()">get rear element</button>
+</body>
+
+</html>

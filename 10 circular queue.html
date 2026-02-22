@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        class CircularQueue {
+            constructor(capacity) {
+                this.cap = capacity;
+                this.arr = [];
+                this.frontIndex = 0;
+                this.rearIndex = -1;
+                this.currSize = this.arr.length;
+            }
+
+            // PUSH (Enqueue)
+            push(data) {
+                if (this.currSize === this.cap) {
+                    console.log("Queue is FULL");
+                    return;
+                }
+
+                this.rearIndex = (this.rearIndex + 1) % this.cap;
+                this.arr[this.rearIndex] = data;
+                this.currSize++;
+            }
+
+            // push(data) {
+            //     if (this.currSize === this.cap) {
+            //         console.log("queue is full")
+            //         return;
+            //     }
+            //     this.rearIndex = (this.rearIndex + 1) % this.cap
+            //     this.arr[this.rearIndex] = data
+            //     this.currSize++
+            // }
+
+            // POP (Dequeue)
+            pop() {
+                if (this.currSize === 0) {
+                    console.log("Queue is EMPTY");
+                    return;
+                }
+
+                this.frontIndex = (this.frontIndex + 1) % this.cap;
+                this.currSize--;
+            }
+
+            // FRONT
+            front() {
+                if (this.currSize === 0) {
+                    console.log("Queue is EMPTY");
+                    return null;
+                }
+
+                return this.arr[this.frontIndex];
+            }
+
+            // DISPLAY (extra for testing)
+            display() {
+                if (this.currSize === 0) {
+                    console.log("Queue is EMPTY");
+                    return;
+                }
+
+                let result = "";
+                for (let i = 0; i < this.currSize; i++) {
+                    let index = (this.frontIndex + i) % this.cap;
+                    result += this.arr[index] + " ";
+                }
+
+                console.log(result);
+            }
+        }
+        let q = new CircularQueue(5);
+
+        q.push(10);
+        q.push(20);
+        q.push(30);
+
+        q.display();   // 10 20 30
+
+        q.pop();
+
+        q.display();   // 20 30
+
+        console.log(q.front()); // 20
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

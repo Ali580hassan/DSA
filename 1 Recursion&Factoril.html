@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Recursion</title>
+    <script>
+        // function khud ko hi call karta hai problem solve karne ke liye jub taq condition false na ho jaye tab taq
+        // direct recursion and indirect recursion are type of recursion 
+
+
+        // direct recursion
+        function apple(x) {
+            console.log(x)
+            if (x < 10) {
+                apple(x + 1)
+            }
+        }
+        let data = 0
+        apple(data)
+
+        // factorial 5 * 4 * 3 * 2 * 1
+
+        function factorial(item) {
+            if (item == 0) {
+                return 1
+            }
+            return item * factorial(item - 1)
+        }
+        let item = 5
+        console.log(item + " factorial is " + factorial(item))
+
+
+        let data2 = ["ali", "talal", "ahad", "mayo", "suri"]
+        let i = 0
+        while (i < data2.length) {
+            console.log(data2[i])
+            i++
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>reverse string using stack</title>
+    <script>
+        let data = []
+        let arraySize = data.length
+
+        function push(newVal) {
+            data[arraySize] = newVal
+            arraySize++
+        }
+        function pop() {
+            // call by refrance arry ma value add kar dy ga pop kar kcjo value mila gi 
+            // bas array ya phir object par work kary ga 
+            let lastRemoveItem = data[arraySize - 1]
+            arraySize -= 1
+            data.length = arraySize
+            return lastRemoveItem
+        }
+        function reverseString(item) {
+            for (let i = 0; i < item.length; i++) {
+                push(item[i])
+            }
+            for (let i = 0; i < item.length; i++) {
+                item[i] = pop()
+            }
+        }
+        let str = "ali"
+        str = str.split("")
+        reverseString(str)
+        console.log(str.join(""))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>reverse array usig recursion</title>
+    <script>
+        let data = [2, 1, 5, 88, 33, 40]
+        let data2 = [1, 23, 4, 5, 22, 11]
+        console.log("use direct function " + data2.reverse())
+        let temp = undefined;
+
+        function reverseRecursion(data, start, end) {
+            console.log(data)
+
+            if (start <= end) {
+                temp = data[start];
+                data[start] = data[end];
+                data[end] = temp
+                reverseRecursion(data, start + 1, end - 1)
+                // console.log(data)
+
+            }
+        }
+        reverseRecursion(data, 0, data.length - 1)
+        // console.log(data)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

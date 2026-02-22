@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        nums = [3, 7, 11, 6]
+        target = 9
+        var twoSum = function (nums, target) {
+            for (let i = 0; i < nums.length; i++) {
+                for (let j = i + 1; j < nums.length; j++) {
+                    if (nums[i] === target - nums[j]) {
+                        return [i, j]
+                    }
+                }
+            }
+        };
+
+
+        console.log(twoSum(nums, target))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
