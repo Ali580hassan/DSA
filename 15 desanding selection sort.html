@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>selection sort</title>
+    <script>
+        let items = [20, 12, 53, 13]
+        // function selectionSort(data) {
+        //     for (let i = 0; i < data.length; i++) {
+        //         let minId = i
+        //         for (let j = i + 1; j < data.length; j++) {
+        //             if (data[j] > data[minId]) {
+        //                 minId = j
+        //             }
+        //         }
+        //         let temp = data[minId]
+        //         data[minId] = data[i]
+        //         data[i] = temp
+        //     }
+        // }
+        function selectionSort(data) {
+            for (let i = 0; i < data.length; i++) {
+                let minI = i
+                for (let j = i + 1; j < data.length; j++) {
+                    if (data[minI] < data[j]) {
+                        minI = j
+                    }
+                }
+                let temp = data[minI]
+                data[minI] = data[i]
+                data[i] = temp
+            }
+        }
+        // function selectionSort(data) {
+        //     for (let i = data.length - 1; i >= 0; i--) {
+        //         let minId = i
+        //         for (let j = i - 1; j >= 0; j--) {
+        //             if (data[j] < data[minId]) {
+        //                 minId = j
+        //             }
+        //         }
+        //         let temp = data[minId]
+        //         data[minId] = data[i]
+        //         data[i] = temp
+        //     }
+        // }
+        selectionSort(items)
+        console.log(items)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
