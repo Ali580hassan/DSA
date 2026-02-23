@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>2 element remain same at the other is sort</title>
+    <script>
+        let arr = [2, 1, 11, 5, 9, 6];
+        let fixed = [11, 5];
+
+        let remaining = arr
+            .filter(num => !fixed.includes(num))
+            .sort((a, b) => a - b);
+
+        let final = [...remaining, ...fixed];
+
+        console.log(final);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
