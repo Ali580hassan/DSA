@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>obj</title>
+    <script>
+        let obj = {
+            name: "ali",
+            age: 22,
+            getName: function () {
+                return this.name
+            }
+        }
+        delete obj.name
+        obj.name = "ali hassan"
+        obj.contract = 1234
+        // console.log(obj.getName())
+        // console.log(obj)
+        console.log(Object.keys(obj))
+        console.log(Object.values(obj))
+        console.log(Object.entries(obj))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

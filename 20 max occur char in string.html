@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>max occurring character in string</title>
+    <script>
+        let str = "hello";
+        let obj = {};
+        let maxKey = "";
+        // for (let i = 0; i < str.length; i++) {
+        //     let key = str[i]
+        //     if (!obj[key]) {
+        //         obj[key] = 0
+        //     }
+        //     obj[key]++
+        //     // console.log(obj)
+        //     if (maxKey == "" || obj[key] > obj[maxKey]) {
+        //         // console.log(key)
+        //         maxKey = key
+        //     }
+        // }
+        for (ch of str) {
+            obj[ch] = (obj[ch] || 0) + 1
+            if (maxKey == "" || obj[ch] > obj[maxKey]) {
+                maxKey = ch
+            }
+        }
+        // console.log(obj)
+        console.log(maxKey)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

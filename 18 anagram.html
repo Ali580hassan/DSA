@@ -2,11 +2,40 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
+    <title>anagram</title>
+    <script>
+        function checkAnagram(str1, str2) {
+            let obj1 = {}
+            let maxkey = ""
+            if (str1.length !== str1.length) {
+                return false
+            }
+            for (ch of str1) {
+                // console.log(ch)
+                obj1[ch] = (obj1[ch] || 0) + 1
+                // if (maxkey == "" || obj1[ch] > obj1[maxkey]) {
+                //     maxkey = ch
+                // }
+            }
+            // console.log(obj1)
+            console.log(maxkey)
+
+            for (ch of str2) {
+                // console.log(obj1[ch])
+                if (!obj1[ch]) {
+                    return false
+                }
+                obj1[ch]--
+            }
+            return true
+        }
+        console.log(checkAnagram("hello", "ehllo"))
+    </script>
 </head>
 
 <body>
     <h1>anagram are two strings build up by the same set of character </h1>
+    <p>cat--> act atc tac are anagram of cat</p>
 </body>
 
 </html>
