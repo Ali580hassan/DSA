@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>linked list</title>
+    <script>
+
+        class list {
+            constructor(data) {
+                this.head = {
+                    value: data,
+                    next: null
+                }
+                // intial ma jo head ha wohi tail b ho ga 
+                this.tail = this.head
+                this.size = 1
+            }
+            appendNode(nodeData) {
+                let newNode = {
+                    value: nodeData,
+                    next: null
+                }
+                this.tail.next = newNode
+                // jo hamari last node ha wohi tail b ho gi 
+                this.tail = newNode
+                this.size += 1
+            }
+        }
+
+        let obj = new list(200)
+        obj.appendNode(300)
+        obj.appendNode(400)
+        console.log(obj)
+
+        // this work base on memory if one vale change other also change 
+        // reference copy
+        // let x = { "name": "ali" }
+        // let y = x
+        // y.name = "hassan"
+        // console.log(x)
+        // // real copy
+        // let a = 10
+        // let b = a
+        // b = 20
+        // console.log(a) // 10 (change nahi hoga)
+
+        // val | next -> val | next -> val | null       next mean address of next node
+        // most first one head  and the lest one tail
+        // node in thr form of Object
+        // initail par head an tail equal raye ga 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

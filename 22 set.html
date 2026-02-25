@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>set</title>
+    <script>
+        // litralse 
+        // set like a array but it remove dublicate value 
+        let data = new Set(["ali", "hassan", "ali"])
+        data.add("talal")
+        data.add({ "email": "123@gmil.com" })
+        // data.clear()
+        // data.delete("ali")
+        // console.log(data.has("ali"))
+        // console.log(data.size)
+        // for (let x of data) {
+        //     console.log(x)
+        // }
+        data.forEach((val) => {
+            console.log(val)
+        })
+        console.log(data.entries())
+        // let array = ["ali", "hassan", "ali"]
+        console.log(data)
+        console.log(Array)    
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

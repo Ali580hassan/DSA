@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>map</title>
+    <script>
+        //map ma key ki koi b ho sakta ha jasy k string bool int 
+        // map key => value 
+        let data = new Map([
+            ['name', 'ali'],
+            [true, 'boolean key'],
+            [100, 'hundred']
+        ])
+        data.set('color', 'red')
+        console.log(data.get(100))
+        console.log(data.has('name'))
+        data.delete('name')
+        // console.log(data.size)
+        // data.clear 
+        // console.log(data)
+        for (let x of data) {
+            console.log(x)
+            // console.log(x[0])
+            // console.log(x[1])
+        }
+        data.forEach((val, key) => {
+            // console.log(key)
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
