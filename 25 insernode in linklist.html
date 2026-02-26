@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>inserting in linked lsit</title>
+    <script>
+        // lead node mean prev node 
+        class list {
+            constructor(data) {
+                this.head = {
+                    value: data,
+                    next: null
+                }
+                // intial ma jo head ha wohi tail b ho ga 
+                this.tail = this.head
+                this.size = 1
+            }
+            appendNode(nodeData) {
+                let newNode = {
+                    value: nodeData,
+                    next: null
+                }
+                this.tail.next = newNode
+                // jo hamari last node ha wohi tail b ho gi 
+                this.tail = newNode
+                this.size += 1
+            }
+            traversing() {
+                let counter = 0
+                let currentNode = this.head
+                while (counter < this.size) {
+                    console.log(currentNode)
+                    currentNode = currentNode.next
+                    counter++
+                }
+            }
+            update(index, updata) {
+                if (index < 0 || index > this.size) {
+                    console.log("invalid index")
+                }
+                let currentNode = this.head
+                let counter = 0
+                while (counter < index) {
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+                currentNode.value = updata;
+            }
+            remove(index) {
+                let counter = 1
+                // first node 
+                // lead mean prev node 
+                let lead = this.head
+                if (index === 1) {
+                    // first node = next node 
+                    this.head = this.head.next
+                } else {
+                    while (counter < index - 1) {
+                        lead = lead.next
+                        counter++
+                    }
+                    // lead agar 1 ha to ya next sa mext value dy ga jasy k 3
+                    let nextNode = lead.next.next
+                    lead.next = nextNode
+                    console.log(lead)
+                }
+            }
+            insertNode(index, val) {
+                // Insert at head
+                if (index === 0) {
+                    this.head = {
+                        value: val,
+                        next: this.head
+                    }
+                    this.size++;
+                    return;
+                }
+                let counter = 1
+                let currentNode = this.head
+                while (counter < index) {
+                    currentNode = currentNode.next
+                    counter++
+                }
+                let nextNode = currentNode.next
+                currentNode.next = {
+                    value: val,
+                    next: nextNode
+                }
+            }
+        }
+
+        let obj = new list(200)
+        obj.appendNode(300)
+        obj.appendNode(400)
+        obj.remove(1)
+        obj.update(0, 999)
+        obj.insertNode(2, 20000)
+        console.log(obj)
+
+        // obj.traversing()
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
