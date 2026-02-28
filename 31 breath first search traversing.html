@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>search node</title>
+    <title>breath first search traversing</title>
     <script>
         class node {
             constructor(val) {
@@ -53,15 +53,65 @@
                     return this.search(root.right, val)
                 }
             }
+
+            preOrder(root) {
+                if (root) {
+                    // all left node then right                   
+                    console.log(root.value)
+                    this.preOrder(root.left)
+                    this.preOrder(root.right)
+                }
+
+            }
+            inOrder(root) {
+                if (root) {
+                    // left root right                   
+                    this.inOrder(root.left)
+                    console.log(root.value)
+                    this.inOrder(root.right)
+                }
+
+            }
+            postOrder(root) {
+                if (root) {
+                    // left right root 
+                    this.postOrder(root.left)
+                    this.postOrder(root.right)
+                    console.log(root.value)
+                }
+
+            }
+            BFStraversing() {
+                // level by level traversing 
+                let queue = []
+                queue.push(this.root)
+                while (queue.length) {
+                    let current = queue.shift()
+                    if (current.left) {
+                        queue.push(current.left)
+                    }
+                    if (current.right) {
+                        queue.push(current.right)
+                    }
+                    console.log(current.value)
+                }
+            }
         }
         let bst = new BSTree
         bst.makeTree(20)
         bst.makeTree(10)
         bst.makeTree(5)
         bst.makeTree(40)
-        console.log(bst.search(bst.root, 10))
+        bst.makeTree(30)
+        bst.makeTree(60)
+        bst.makeTree(25)
+        // console.log(bst.search(bst.root, 10))
         // console.log(bst)
         // console.log(bst.isRootEmpty())
+        // bst.preOrder(bst.root)
+        // bst.inOrder(bst.root)
+        // bst.postOrder(bst.root)
+        bst.BFStraversing()
     </script>
 </head>
 
