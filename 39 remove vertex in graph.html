@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>remove edge</title>
+    <title>remove vertex</title>
     <script>
         class list {
             constructor() {
@@ -29,7 +29,16 @@
                 this.data[V2] = this.data[V2].filter((item) => item != V1)
             }
 
-
+            removeVertex(vertex) {
+                if (!this.data[vertex]) {
+                    return;
+                }
+                for (let item of this.data[vertex]) {
+                    // console.log(item)
+                    this.removeEdge(vertex, item)
+                }
+                delete this.data[vertex]
+            }
         }
         let obj = new list
         obj.addVertex("A")
@@ -40,7 +49,8 @@
         obj.addEdge("A", "B")
         obj.addEdge("B", "C")
         obj.addEdge("B", "D")
-        obj.removeEdge("A", "B")
+        // obj.removeEdge("A", "B")
+        obj.removeVertex("A")
         console.log(obj.data)
     </script>
 </head>
