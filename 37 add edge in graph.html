@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>add edge in graph</title>
+    <script>
+        class list {
+            constructor() {
+                this.data = {}
+            }
+            addVertex(vertex) {
+                if (!this.data[vertex]) {
+                    this.data[vertex] = []
+                }
+            }
+            addEdge(V1, V2) {
+                if (!this.data[V1]) {
+                    this.addVertex(V1)
+                }
+                if (!this.data[V2]) {
+                    this.addVertex(V2)
+                }
+                this.data[V1].push(V2)
+                this.data[V2].push(V1)
+            }
+        }
+        let obj = new list
+        obj.addVertex("A")
+        obj.addVertex("B")
+        obj.addVertex("C")
+        obj.addVertex("D")
+        obj.addEdge("A", "C")
+        obj.addEdge("A", "B")
+        obj.addEdge("B", "C")
+        obj.addEdge("B", "D")
+        console.log(obj.data)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

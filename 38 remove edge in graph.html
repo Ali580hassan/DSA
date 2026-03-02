@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>remove edge</title>
+    <script>
+        class list {
+            constructor() {
+                this.data = {}
+            }
+            addVertex(vertex) {
+                if (!this.data[vertex]) {
+                    this.data[vertex] = []
+                }
+            }
+            addEdge(V1, V2) {
+                if (!this.data[V1]) {
+                    this.addVertex(V1)
+                }
+                if (!this.data[V2]) {
+                    this.addVertex(V2)
+                }
+                this.data[V1].push(V2)
+                this.data[V2].push(V1)
+            }
+
+            removeEdge(V1, V2) {
+                this.data[V1] = this.data[V1].filter((item) => item != V2)
+                this.data[V2] = this.data[V2].filter((item) => item != V1)
+            }
+
+            removeVertex(vertex) {
+                if (!this.data[vertex]) {
+                    return;
+                }
+                for (let item of this.data[vertex]) {
+                    // console.log(item)
+                    this.removeEdge(vertex, item)
+                }
+                delete this.data[vertex]
+            }
+        }
+        let obj = new list
+        obj.addVertex("A")
+        obj.addVertex("B")
+        obj.addVertex("C")
+        obj.addVertex("D")
+        obj.addEdge("A", "C")
+        obj.addEdge("A", "B")
+        obj.addEdge("B", "C")
+        obj.addEdge("B", "D")
+        // obj.removeEdge("A", "B")
+        obj.removeVertex("A")
+        console.log(obj.data)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

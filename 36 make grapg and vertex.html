@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>add vertex</title>
+    <script>
+        class list {
+            constructor() {
+                this.data = {}
+            }
+            addVertex(vertex) {
+                if (!this.data[vertex]) {
+                    this.data[vertex] = [];
+                }
+            }
+        }
+        let obj = new list
+        obj.addVertex("A")
+        obj.addVertex("B")
+        obj.addVertex("C")
+        obj.addVertex("D")
+        console.log(obj.data)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
